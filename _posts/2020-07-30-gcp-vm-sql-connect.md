@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "gcp-vm-sql-connect"
+title: "GCP VM인스턴스와 SQL 연결하기"
 author: "한결"
 categories: blog
 ---
