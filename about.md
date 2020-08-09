@@ -3,8 +3,8 @@ layout: post
 title: About
 ---
   
-  <center>세상엔 안하는 건 있어도 못하는 건 없다는 마음으로  
-  공부하고 있는 아무것도 모르는 아이티 뉴비</center>  
+  <center>세상엔 안하는 건 있어도 못하는 건 없다는 마음으로</center>    
+  <center>공부하고 있는 아무것도 모르는 아이티 뉴비</center>  
   <br>
   <br>
 <figure>
