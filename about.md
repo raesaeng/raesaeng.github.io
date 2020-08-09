@@ -38,7 +38,7 @@ title: About
   <br>
   <br>
   <br>
-  <div style="text-align: right" "text-size=1"> 인생을 바꾸는 도중의 어떤 길목에서 </div>
+  <div style="text-align: right"> 인생을 바꾸는 도중의 어떤 길목에서 </div>
   <div style="text-align: right"> 한결 </div>
   <br>
   <br>
