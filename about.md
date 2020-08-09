@@ -3,15 +3,18 @@ layout: post
 title: About
 ---
   
-  세상엔 안하는 건 있어도 못하는 건 없다는 마음으로 공부하고 있는 아무것도 모르는 아이티 뉴비
-
+  세상엔 안하는 건 있어도 못하는 건 없다는 마음으로  
+  공부하고 있는 아무것도 모르는 아이티 뉴비  
+  
+  
 <figure>
   <img src="https://user-images.githubusercontent.com/69098825/89725921-ff606380-da4f-11ea-8b0d-180461203489.JPG" />
   <figcaption>
     something for nothing
   </figcaption>
 </figure>
-
+  
+  
 27살 내 삶에 주어진 모든 것들이 마음에 들지 않았다.  
 심리적으로 처절히 무너지고 괴로운 날들이 이어졌다.  
 인생을 바꾸고 싶었다. 누군가가 말했다.  
