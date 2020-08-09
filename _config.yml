@@ -46,4 +46,4 @@ plugins:
 paginate: 3
 paginate_path: "/page/:num/"
 
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
