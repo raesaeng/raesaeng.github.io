@@ -1,3 +1,10 @@
+---
+layout: post
+title: "맥용 패키지 매니저 Brew, Brew-cask"
+author: "한결"
+categories: blog
+---
+
 ## 맥용 Package Manager Brew-cask
 
 
