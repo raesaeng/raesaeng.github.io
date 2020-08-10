@@ -1,4 +1,9 @@
-
+---
+layout: post
+title: "Docker Ubuntu 설치하기 및 기본 문법"
+author: "한결"
+categories: blog
+---
 
 ## 1. Ubuntu에 Docker 설치하기
 
