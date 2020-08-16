@@ -1,3 +1,10 @@
+---
+layout: post
+title: "지옥같았던 쿠버네티스 설치하기"
+author: "한결"
+categories: blog
+---
+
 ## 쿠버네티스 설치하기
 
 ### kuberspray와 vagrant를 이용해 쿠버네티스를 설치한다.
