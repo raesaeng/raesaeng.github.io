@@ -7,38 +7,38 @@ body {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
   margin: .5em auto;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.5em;
   margin: 1em auto;
   text-align: center;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin: 1.3333em auto;
   text-align: center;
 }
 
 h4 {
-  font-size: 1.25em;
+  font-size: 1em;
   font-style: italic;
   margin: 1.875em auto;
   text-align: center;
 }
 
 h5 {
-  font-size: 1em;
+  font-size: 0.875em;
   font-style: italic;
   margin: 2em auto;
   text-align: center;
 }
 
 h6 {
-  font-size: .875em;
+  font-size: .75em;
   font-style: italic;
   margin: 2.25em auto;
   text-align: center;
@@ -127,7 +127,7 @@ figcaption {
 .post-date {
   color: $muted-text-color;
   display: block;
-  font-size: .825em;
+  font-size: .75em;
   white-space: nowrap;
   text-transform: uppercase;
   .post-link & {
@@ -145,7 +145,7 @@ figcaption {
   background: $brand-color;
   border: 1px dashed transparent;
   display: block;
-  font-size: .875em;
+  font-size: .75em;
   font-weight: 700;
   margin-top: -2.625rem;
   padding: .5rem;
