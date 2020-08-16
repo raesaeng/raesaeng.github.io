@@ -1,3 +1,10 @@
+---
+layout: post
+title: "가상화와 도커"
+author: "한결"
+categories: blog
+---
+
 ### 가상화 Virtualization
 
 
