@@ -1,6 +1,6 @@
 body {
   background: $brand-color;
-  color: $block-color;
+  color: $text-color;
   font-family: $font-family;
   font-size: 1.25em;
   line-height: 1.5;
@@ -61,7 +61,6 @@ a:focus {
 }
 
 blockquote {
-  color: $block-color;
   margin: 2em auto;
   opacity: .8;
   > * {
@@ -70,7 +69,6 @@ blockquote {
 }
 
 blockquote.epigraph {
-  color: $block-color;
   font-style: italic;
 }
 
@@ -79,7 +77,6 @@ small {
 }
 
 p > cite {
-  color: $block-color;
   display: block;
   text-align: right;
 }
