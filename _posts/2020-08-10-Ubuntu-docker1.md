@@ -144,6 +144,7 @@ $ sudo docker run hello-world
   $ docker inspect centos:latest
   ```
 
+
 * 도커 저장, 불러오기
   docker save 명령은 호스트에 저장된 이미지를 아카이브 파일로 복사한다. -o (output) 옵션을 사용하여 생성되는 파일의 경로를 지정해준다.  
   docker load 명령은 아카이브 파일을 불러오는 명령이다. -i (input) 옵션을 사용하여 지정된 파일을 불러온다.   
