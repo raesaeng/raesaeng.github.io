@@ -125,7 +125,7 @@ figcaption {
 }
 
 .post-date {
-  color: $block-color;
+  color: $muted-text-color;
   display: block;
   font-size: .75em;
   white-space: nowrap;
@@ -154,7 +154,7 @@ figcaption {
   text-transform: uppercase;
   &:hover,
   &:focus {
-    background: lighten($brand-color, 2.5%);
+    background: lighten($block-color, 2.5%);
     border-color: $text-color;
     margin-top: 0;
   }
