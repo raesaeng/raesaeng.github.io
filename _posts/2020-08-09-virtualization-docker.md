@@ -48,9 +48,12 @@ categories: blog
     * namespace 
 
       namespace 라는 공간에 다수의 오브젝트를 격리할 수 있다. 원래대로라면 동일한 호스트에서 동일한 PID를 가질 수 없지만 namespace에서는 동일한 PID를 가질 수 있다.
-
-
-
+  
+  
+![1_wOBkzBpi1Hl9Nr__Jszplg](https://user-images.githubusercontent.com/69098825/90334080-fcdcab80-e005-11ea-9f0d-917577a0cb0a.png)
+  
+  
+  
 ### Docker
 
 도커는 Go 언어로 개발된 오픈소스 플랫폼으로 리눅스 컨테이너를 쉽게 관리할 수 있도록 돕는다. 도커의 가장 큰 특징은 이식성으로 개발 환경, 테스트 환경, 서비스 환경을 모두 동일하게 사용이 가능하다.
@@ -103,7 +106,10 @@ categories: blog
 
    
 
-
-
+![다운로드](https://user-images.githubusercontent.com/69098825/90334143-53e28080-e006-11ea-82f3-8a5b6ce8b07c.png)  
+![docker-change-update](https://user-images.githubusercontent.com/69098825/90334145-58a73480-e006-11ea-9bb1-ec160ce5e621.png)  
+![unnamed](https://user-images.githubusercontent.com/69098825/90334148-5a70f800-e006-11ea-9018-0ebde3447e39.png)  
+  
+  
 
 
