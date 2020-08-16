@@ -83,6 +83,7 @@ categories: blog
     vagrant up을 하면 vagrantfile 에 설정한대로 가상머신이 생성된다.
 
     설정한대로 4개의 가상머신이 생성되었고 vagrant up 명령어로 실행시킬 수 있다.
+    vagrant suspend / vagrant halt / vagrant resume 으로 중지, 종료, 재실행시킬 수 있다.
 
     ```
     student@CCCR01:~/vagrant$ vagrant up
