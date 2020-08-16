@@ -78,42 +78,81 @@ $ sudo docker run hello-world
 
 
 
-## 2. Docker hub 도커 허브 
-
+## 2. Docker hub 도커 허브
+도커허브는 도커의 가장 기본적인 이미지 저장소이다. 도커허브에서 이미지를 공유할 수 있다. 오피셜 이미지 외에도 사용자들이 개발한 이미지도 공유되어 다운받을 수 있다. 도커허브에 저장된 이미지의 이름은 기본적으로 "저장소이름:태그"로 존재하며 오피셜 이미지는 "저장소 이름"으로 존재한다. 그외의 이미지들은 "허브ID/저장소이름"으로 되어있다.  
+  
+  
 * 도커 이미지 검색
+  이미지를 검색한 후 찾아서 다운로드가 가능하다. 서치 명령어로는 이미지 저장소에 저장된 태그까지는 알 수 없다.  
+  NAME : 이미지 저장소 이름  
+  DESCRIPTION : 이미지에 대한 설명  
+  STARS : 이미지에서 대한 평가점수  
+  OFFICIAL : 공식 이미지 여부  
+  AUTOMATED : 자동화 빌드 여부  
 
   ```
   $ docker search centos
   ```
 
 * 도커 이미지 다운로드
+  태그를 생략하면 자동으로 latest가 부여되어 다운로드가 진행된다. 이미지마다 레이어 수가 다르며 중복된 레이어는 다운받지 않는다.  
+  TAG : 이미지의 태그로 버전을 나타내거나 특성을 나타냄  
+  DIGEST : 해시값  
 
   ```
   $ docker pull centos
+  $ docker pull httpd:latest
+  $ docker pull mysql:5.7
   ```
 
 * 도커 이미지 리스트 
+  현재 호스트에 저장되어 있는 이미지 목록을 나타낸다.  
+  저장소를 지정하여 해당 저장소의 이미지만 나열할 수 있다.
 
   ```
   $ docker images 
   $ docker image ls
+  
+  $ docker images centos
   ```
 
 * 도커 이미지 삭제
 
-  컨테이너에서 사용중인 이미지는 삭제되지 않는다.
+  컨테이너에서 사용중인 이미지는 삭제되지 않는다.  
 
   ```
   $ docker image rm hello-world:latest
   $ docker rmi hello-world:latest
   ```
 
-  -f 옵션 force 으로 강제 삭제가 가능하다. 권장하지는 않는 삭제법.
+  -f 옵션 force 으로 강제 삭제가 가능하다. 권장하지는 않는 삭제법.  
 
   ```
   $ docker rmi -f hello-world:latest
   ```
+  
+* 도커 정보확인
+  docker inspect 명령어로 도커 이미지나 오브젝트의 정보를 자세히 확인할 수 있다. json 포맷으로 보여준다.  
+  Config : cmd는 이미지를 컨테이너로 생성할 때 컨테이너가 실행하는 애플리케이션을 말한다.  
+  Volumes : 도커 볼륨.  
+  WorkingDir : 컨테이너에 접근했을 때의 디렉토리  
+  Entrypoint : Cmd와 마찬가지로 컨테이너가 실행할 애플리케이션을 말한다. 
+  * Entrypoint와 Cmd 관계는 명령과 인자의 관계와 비슷하다. Entrypoint가 지정되어 있지 않으면 Cmd가 명령으로 동작하며, Entrypoint와 Cmd가 함께 있으면 Entrypoint가 명령이고 Cmd가 인자처럼 동작한다.  
+  RootFS : 이미지의 레이어를 나타냄. 계층화.  
+  
+  ```
+  $ docker inspect centos:latest
+  ```
 
+* 도커 저장, 불러오기
+  docker save 명령은 호스트에 저장된 이미지를 아카이브 파일로 복사한다. -o (output) 옵션을 사용하여 생성되는 파일의 경로를 지정해준다.  
+  docker load 명령은 아카이브 파일을 불러오는 명령이다. -i (input) 옵션을 사용하여 지정된 파일을 불러온다.   
+
+  ```
+  $ docker save -o img.tar centos:latest httpd:latest
+  $ docker load -i img.tar
+  ```
+  img.tar으로 저장한 centos와 httpd 이미지를 불러왔다.  
 
 
 ## 3. 컨테이너
@@ -122,7 +161,15 @@ $ sudo docker run hello-world
 
   ps 는 실행중인 컨테이너 목록을 출력하고
 
-  ps -a 옵션을 사용하면 존재하는 모든 컨테이너 목록을 출력한다.
+  ps -a 옵션을 사용하면 존재하는 모든 컨테이너 목록을 출력한다.  
+  
+  CONTAINER ID : 컨테이너 고유 ID
+  IMAGE : 컨테이너가 사용하는 이미지
+  COMMAND : 컨테이너에서 실행중인 애플리케이션
+  CREATED : 컨테어너가 생성된 날짜
+  STATUS : 컨테이너의 상태
+  PORTS : 컨테이너에서 사용 중인 포트
+  NAMES : 컨테이너의 이름
 
   ```
   $ docker ps
