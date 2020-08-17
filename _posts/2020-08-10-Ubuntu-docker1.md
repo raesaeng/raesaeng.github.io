@@ -232,6 +232,7 @@ $ sudo docker run hello-world
 
   ```
   $ docker stats
+  $ docker ps | grep os1
   ```
 
 * 컨테이너 중지
@@ -240,9 +241,31 @@ $ sudo docker run hello-world
   $ docker stop os1
   ```
 
+* 컨테이너 환경변수 설정하기
+  -e 옵션을 사용하여 컨테이너의 환경변수를 설정할 수 있다.
+  
+  ```
+  $ docker run -it --name os3 -e "LAB=docker: centos:latest
+  ```
+  
+* 컨테이너 CPU, memory 제한하기
+
+  ```
+  $ docker run -it --name os3 --cpus 0.3 centos:latest
+  $ docker run -itd --name os3 --memory 1024m centos:latest
+  ```
+  
+* env 환경 자원 제한 변경하기
+  
+  ```
+  $ docker update --memory 1400m os3
+  ```
+  
+  
 * 컨테이너 접근
 
-  컨테이너 표준 입력, 표준 출력/에러를 포함하는 컨테이너에 연결함
+  컨테이너 표준 입력, 표준 출력/에러를 포함하는 컨테이너에 연결함.
+  attach 명령으로 쉘 프로그램 이외의 애플리케이션을 실행하는 컨테이너에 접근하면 쉘이 나타나지 않으므로 쉘 프로그램 이외의 애플리케이션은 attach 명령어로 접근하지 않는 것이 좋다.
 
   ```
   $ docker attach
@@ -250,11 +273,26 @@ $ sudo docker run hello-world
 
 * 컨테이너 명령 실행
 
-  실행중인 컨테이너에 간단하게 접근하여 명령을 실행시킬 수 있다.
+  실행중인 컨테이너에 간단하게 접근하여 명령을 실행시킬 수 있다.  
+  ps 명령어로 컨테이너를 확인하면 실행 시간이 표기되고 갱신되는 값으로 존재하는데, exec로 간단히 명령어를 실행하면 ps의 컨테이너 상태는 변화하지 않는다.  
 
   ```
-  $ docker exec
+  $ docker exec os2 ip a s
   $ docker exec os4 cat /tmp/volume/index.html
+  ```
+
+* 컨테이너 프로세스 정보 확인
+  컨테이너에서 실행되는 프로세스의 정보를 확인할 수 있다.  
+  
+  ```
+  $ docker top os2
+  ```
+  
+* 컨테이너 로그 확인
+  
+
+  ```
+  $ docker logs db1
   ```
 
 * 컨테이너 파일 복사 
@@ -271,6 +309,17 @@ $ sudo docker run hello-world
   ```
   $ docker cp os5:/tmp/passwd /home/user
   ```
+  
+* 컨테이너 파일 변경상태 체크
+  
+  A : 파일이 추가됨
+  C : 파일이 변경됨
+  D : 파일이 삭제됨
+  
+  ```
+  $ docker diff os2
+  ```
+
 
   
 
