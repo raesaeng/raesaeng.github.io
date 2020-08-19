@@ -40,6 +40,68 @@ categories: blog
     ```
     student@CCCR01:~$ mkdir vagrant
     student@CCCR01:~/vagrant$ sudo vi vagrantfile
+    student@CCCR01:~/vagrant$ sudo cat vagrantfile
+    # -*- mode: ruby -*-
+    # vi: set ft=ruby :
+    
+    Vagrant.configure("2") do |config|
+      config.vm.define "kube-master1" do |config|
+        config.vm.box = "ubuntu/bionic64"
+        config.vm.provider "virtualbox" do |vb|
+          vb.name = "kube-master1"
+          vb.cpus = 2
+          vb.memory = 3072
+        end
+        config.vm.hostname = "kube-master1"
+        config.vm.network "private_network", ip: "192.168.56.11"
+        config.disksize.size = "30GB"
+      end
+      config.vm.define "kube-node1" do |config|
+        config.vm.box = "ubuntu/bionic64"
+        config.vm.provider "virtualbox" do |vb|
+          vb.name = "kube-node1"
+          vb.cpus = 2
+          vb.memory = 3072
+        end
+        config.vm.hostname = "kube-node1"
+        config.vm.network "private_network", ip: "192.168.56.21"
+        config.disksize.size = "30GB"
+      end
+      config.vm.define "kube-node2" do |config|
+        config.vm.box = "ubuntu/bionic64"
+        config.vm.provider "virtualbox" do |vb|
+          vb.name = "kube-node2"
+          vb.cpus = 2
+          vb.memory = 3072
+        end
+        config.vm.hostname = "kube-node2"
+        config.vm.network "private_network", ip: "192.168.56.22"
+        config.disksize.size = "30GB"
+      end
+      config.vm.define "kube-node3" do |config|
+        config.vm.box = "ubuntu/bionic64"
+        config.vm.provider "virtualbox" do |vb|
+         vb.name = "kube-node3"
+          vb.cpus = 2
+          vb.memory = 3072
+        end
+        config.vm.hostname = "kube-node3"
+        config.vm.network "private_network", ip: "192.168.56.23"
+        config.disksize.size = "30GB"
+      end
+    
+      # Hostmanager plugin
+      config.hostmanager.enabled = true
+      config.hostmanager.manage_guest = true
+    
+      # Enable SSH Password Authentication
+      config.vm.provision "shell", inline: <<-SHELL
+        sed -i 's/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
+        sed -i 's/archive.ubuntu.com/ftp.daum.net/g' /etc/apt/sources.list
+        sed -i 's/security.ubuntu.com/ftp.daum.net/g' /etc/apt/sources.list
+        systemctl restart ssh
+      SHELL
+    end
     ```
 
     vagrant 파일과 상태를 확인 후 hostmanager, disksize 플러그인을 다운받는다.
@@ -406,6 +468,33 @@ categories: blog
    ```
    vagrant@kube-master1:~/kubespray$ cp -rfp inventory/sample inventory/mycluster
    vagrant@kube-master1:~/kubespray$ vi inventory/mycluster/inventory.ini 
+    [all]  
+    kube-master1	ansible_host=192.168.56.11 ip=192.168.56.11 ansible_connection=local
+    kube-node1      ansible_host=192.168.56.21 ip=192.168.56.21
+    kube-node2 	    ansible_host=192.168.56.22 ip=192.168.56.22
+    kube-node3 	    ansible_host=192.168.56.23 ip=192.168.56.23
+    
+    [all:vars]  
+    ansible_python_interpreter=/usr/bin/python3
+
+    [kube-master]  
+    kube-master1 
+    
+    [etcd]  
+    kube-master1  
+    
+    [kube-node]  
+    kube-node1  
+    kube-node2
+    kube-node3  
+    
+    [calico-rr]  
+    
+    [k8s-cluster:children]  
+    kube-master  
+    kube-node  
+    calico-rr
+    
    vagrant@kube-master1:~/kubespray$ ansible -i inventory/mycluster/inventory.ini -m ping all
    kube-master1 | SUCCESS => {
        "changed": false,
