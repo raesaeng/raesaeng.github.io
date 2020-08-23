@@ -1,0 +1,164 @@
+### egrep
+
+확장 정규식을 사용한 grep
+
+* (pattern) 
+
+  패턴을 한 덩어리로 취급
+
+  ```
+  abcd, abcbcd, abcbcbcd 찾고 싶을 때 egrep에서 a(bc)*d
+  a([bcd][xyz])*d
+  ```
+
+* pattern+ 
+
+  *와 비교
+
+  ```
+  abc, abbc, abbbc
+  grep : abb*c
+  egrep : ab+c
+  ```
+
+* pattern1 | pattern2 
+
+  두개의 패턴 중 하나를 선택하는 것으로 ()와 함께 많이 사용한다.
+
+  ```
+  ( pattern1 | pattern2 )
+  abcde, axyze
+  egrep : a(abc|xyz)e
+  
+  abcde, ace
+  egrep : a(bcd|c)e
+  
+  abcde, axyze, aaaaae
+  egrep : a(bcd|xyz|aaaa)e
+  ```
+
+* 예제 datafile을 가지고 실습 진행한다.
+
+  ```
+  student@CCCR03:~/Downloads$ cat datafile
+  northwest	NW	Charles Main		3.0	.98	3	34
+  western		WE	Sharon Gray		5.3	.97	5	23
+  southwest	SW	Lewis Dalsass		2.7	.8	2	18
+  southern	SO	Suan Chin		5.1	.95	4	15
+  southeast 	SE	Patricia Hemenway	4.0	.7	4	17
+  eastern		EA	TB Savage		4.4	.84	5	20
+  northeast 	NE	AM Main Jr.		5.1	.94	3	13
+  north		NO	Margot Weber		4.5	.89	5	 9
+  central		CT 	Ann Stephens		5.7	.94	5	13
+  ```
+
+  
+
+  1. NW 또는 EA를 가진 패턴 검색
+
+     ```
+     egrep '(NW|EA)' datafile
+     ```
+
+  2. 3이 1개 이상 반복되는 패턴
+
+     ```
+     egrep '3+' datafile
+     ```
+
+  3. 2가 있고 뒤에 .이 있거나 없거나이고 숫자 한자리가 이어짐
+
+     2.5			2.			27			2..5
+
+     ```
+     egrep '2\.?[0-9]' datafile
+     ```
+
+  4. no를 반복해서 붙임
+
+     no			nono			nonono				nonononono
+
+     ```
+     egrep '(no)+' datafile
+     ```
+
+  5. Sh 이거나 Su인 패턴 검색
+
+     ```
+     egrep 'S(h|u)' datafile
+     ```
+
+
+
+### fgrep (fixed grep)
+
+특수 문자를 정규화 표현식으로 해석하지 않고 문자 그대로 해석한다.
+
+* Hello World 문장이 들어있는 라인을 검색
+
+  ```
+  $ cat hello
+  Hello world
+  HELLO WORLD
+  Haaaa Wxxxx
+  'H.... W....'
+  ```
+
+  * grep 사용시 전체 라인이 검색됨
+
+    ```
+    grep 'H.... W....' hello
+    ```
+
+  * fgrep 사용시 정확하게 같은 라인만 검색됨
+
+    ```
+    fgrep 'H.... W....' hello
+    ```
+
+
+
+### 정리
+
+* grep : 기본 정규화 표현식을 사용하여 문자열 패턴 검색이 가능하다.
+
+* egrep : 확장 정규화 표현식을 사용하여 문자열 패턴 검색이 가능하다.
+
+* fgrep : 정규화 표현식을 사용하지 않고 특수문자를 포함하여 정확하게 문자열로 패턴 검색이 가능하다.
+
+  * 정규화 표현식 연습 사이트 : http://regexr.com
+
+* 예제
+
+  1. e-mail 주소 검사
+
+     ```
+     ^[A-Za-z][A-Za-z0-9]*(\.[A-Za-z0-9]+)?@[A-Za-z0-9]+\.(com|net|org)
+     ```
+
+  2. 전화번호 검사
+
+     ```
+     ^01[016789]-[1-9][0-9][0-9][0-9]?-[0-9][0-9][0-9][0-9]$
+     ```
+
+     * 반복회수를 지정하는 정규화 표현식 옵션
+
+       ```
+       pattern{3}
+       pattern{2,5}
+       pattern{2,}
+       pattern{,5}
+       ```
+
+     ```
+     ^01[016789]-[1-9][0-9]{2,3}-[0-9]{4}$
+     # /usr/xpg4/bin/egrep '^01[016789]-[1-9][0-9]{2,3}-[0-9]{4}$' regexp.txt
+     ```
+
+  3. IP 검사
+
+     ```
+     # /usr/xpg4/bin/egrep '^([0-9]{1,3}\.){3}[0-9]{1,3}$' regexp.txt
+     ```
+
