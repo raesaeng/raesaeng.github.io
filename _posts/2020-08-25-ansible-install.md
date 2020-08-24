@@ -1,3 +1,11 @@
+---
+layout: post
+title: "ansible 개념과 설치하기"
+author: "한결"
+categories: blog
+---
+
+
 # 2020-08-20 ansible
 
 Created: Aug 20, 2020 10:17 AM
