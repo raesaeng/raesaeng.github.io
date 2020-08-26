@@ -1,3 +1,10 @@
+---
+layout: post
+title: "ansible-vault 실습 - user생성 플레이북"
+author: "한결"
+categories: blog
+---
+
 ### ansible-vault 실습
 
 사용자를 자동으로 생성해주는 플레이북을 생성해 볼 것이다.
