@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "웹 어플리케이션 보안 -1"
+title: "웹 어플리케이션 보안 -2"
 author: "한결"
 categories: blog
 ---
