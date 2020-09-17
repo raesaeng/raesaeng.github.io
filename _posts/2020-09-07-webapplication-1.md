@@ -22,25 +22,29 @@ categories: blog
 3. 암호화 통신
 4. 버전관리
 
-
-
+/n
+/n
 ### WWW World Wide Web
 
 * 네트워크에 연결된 컴퓨터를 통해 정보를 공유할 수 있는 전 세계적 정보 공간
 * 하이퍼텍스트로 텍스트와 각종 데이터를 교환하는 전송방식을 의미한다.
+/n
+/n
 
 ### 하이퍼텍스트 Hypertext
 
 * HTML 등의 언어로 만들어진 하이퍼 텍스트 웹문서를 HTTP로 전송받아 웹브라우저로 실행해서 이용하는 것이 웹서비스이다.
 * 하이퍼 텍스트를 표시하는 언어가 HTML이다. (ML : markup language)
 
-
-
+/n
+/n
 ### URI Uniform Resource Identifier = URL + URN
 
 * 프로토콜://컴퓨터주소/경로명/파일명
 * IT 업계에서는 이 용어를 많이 쓴다.
 
+/n
+/n
 ### URL Uniform Resource Locator
 
 * 네트워크 상에서 서비스되는 자원의 정확한 위치를 나타내는 표준 규약
@@ -56,42 +60,46 @@ categories: blog
     * & : 복수의 파라미터를 연결한다.
     * % : URL 인코딩
     * \+ : 공백
-
+/n
+/n
 ### URN Uniform Resource Name
 
 * 자원의 위치와 관련 없는 자원 자체의 정보
 * 식별번호 같은 것이기 때문에 바뀌지 않는다.
 * URN:ISBN:1234567890
 
-
-
+/n
+/n
 ### 오늘날의 웹은 웹어플리케이션화 되어 해킹 요소가 많아졌다.
-
+/n
+/n
 ### 웹 어플리케이션 아키텍처
 
 * 외부에서는 방화벽 때문에 웹에만 접근 할 수 있다. 이외는 접근할 수 있는 방법이 없다.
 * 웹 어플리케이션은 3계층으로 구성된다.
   * 프론트 서버 + 미들웨어 + 백서버
   * Web Server + Web Application Server (WAS) + DB Server
-
+/n
+/n
 ### 서버사이드 Server Side
 
 * 서버에서 ASP, JSP, PHP등과 같은 서버사이드 언어가 해석되고 실행되는 것
 * 서버의 소스코드는 클라이언트가 볼 수 없다. 실행 결과만 볼 수 있음
-
+/n
+/n
 ### 클라이언트 사이드
 
 * 클라이언트에서 HTML, JavaScript 등과 같은 언어가 해석되고 실행되는 것
 * 클라이언트도 원본 소스를 볼 수 있다.
 
-
-
+/n
+/n
 ### 모든 보안 조치는 클라이언트 사이드가 아닌 서버사이드에서 이루어 져야 한다.
 
 * 클라이언트 사이드는 우리가 코드를 쉽게 변경할 수 있기 때문. 단 보안 프로그램은 클라이언트 사이드 조치가 인정된다. 보안프로그램을 해킹하기 위해서 10년이 걸리기 때문이다.
 
-
-
+/n
+/n
 ### HTTP 프로토콜
 
 * Hypertext Transfer Protocol
@@ -102,8 +110,8 @@ categories: blog
 * 1.0 부터 keep - alive 기능이 사용된다.
 * 불필요한 메소드는 종료하기
 
-
-
+/n
+/n
 ### 웹 프록시
 
 * 프록시를 통해 클라이언트가 다른 네트워크 서비스에 간접적으로 접속할 수 있게 하는 컴퓨터 시스템이나 응용 프로그램을 말한다. 서버와 클라이언트 사이에 중계기로 통신을 수행하는 것은 프록시, 중계기능을 하는 것은 프록시 서버이다.
@@ -112,8 +120,8 @@ categories: blog
   * http response
 * burp suite 웹 프록시 도구. 웹 해킹의 중심. 무기 같은 것. fiddler, paros 등이 있다.
 
-
-
+/n
+/n
 ### Burp Suite 실습
 
 * burp suite 다운로드 https://portswigger.net/burp/communitydownload
@@ -122,10 +130,10 @@ categories: blog
 
   
 
-
-
-
-
+/n
+/n
+/n
+/n
 ### HTTP REQUEST
 
 * 클라이언트는 서버에게 메소드라는 수단으로 요청을 한다. 메소드 중 가장 중요한 건 GET 과 POST 이다.
@@ -141,9 +149,9 @@ Body
 
 Request Line
  -> 메소드 공백 URL 공백 HTTP버전
-
-
-
+/n
+/n
+/n
 ### GET
 
 * 지정된 URL 정보를 요청한다.
@@ -160,9 +168,9 @@ Accept-Encoding: gzip, deflate
 Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
 Connection: close
 ```
-
-
-
+/n
+/n
+/n
 ### POST
 
 * 지정된 URL 정보를 요청한다.
@@ -185,9 +193,9 @@ Upgrade-Insecure-Requests: 1
 mode=STATUS&id=1111&pass=1111
 ```
 
-
-
-
+/n
+/n
+/n
 
 ### 불필요한 메소드를 활용한 보안 위협 실습
 
@@ -200,6 +208,8 @@ OPTIONS / HTTP/1.1
 
 host:124.53.136.207
 --------------------------------------
+/n
+/n
 ### PUT 메소드를 이용한 업로드
 
 nc 124.53.136.207 777
@@ -211,9 +221,9 @@ theflower go go go!
 124.53.136.207:777/chapter5/test.html 접속하기
 
 
-
-
-
+/n
+/n
+/n
 ### HTTP Response
 
 Status line
@@ -239,27 +249,16 @@ HTTP버전 공백 상태코드 공백 상태문구정의
         최대 세션수를 초과해서 웹 서비스가 불가능한 경우
 
 
-
-
-
+/n
+/n
+/n
 ### 정보노출이 되면 보안 취약점
 -> 따라서 상태코드 , 에러 정보등 어떤 정보도 노출되게 하면 안된다
 -> 똑같은 페이지가 뜨게 만들어야한다.
 
-Username: natas0
-Password: natas0
-
-URL: http://natas0.natas.labs.overthewire.org
------------------------------------------------------------
-
-
-https://www.google.com/search?q=%EA%B9%80%ED%98%B8%EC%A7%84&oq=%EA%B9%80%ED%98%B8%EC%A7%84&aqs=chrome..69i57j0l7.3422j0j4&sourceid=chrome&ie=UTF-8
--------------------------------------------------------
-http://124.53.136.207:777
-
-
-
-
+/n
+/n
+/n
 ### 세션 하이재킹 공격 또는 쿠키 재생공격
 
 다른 사람이 로그인하고 있는 동안 세션 id를 훔치는데 성공하면 해당 세션 id를 사용해서 로그인 세션을 가로챌 수 있다.
