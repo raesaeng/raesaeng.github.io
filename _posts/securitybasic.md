@@ -55,7 +55,7 @@
 
     
 
-  ![Screenshot from 2020-09-22 14-10-16](/home/student/Pictures/Screenshot from 2020-09-22 14-10-16.png)
+  ![Screenshot from 2020-09-22 14-10-16](https://user-images.githubusercontent.com/69098825/93896947-7fa30580-fd2c-11ea-806c-6b9c838abd30.png)
 
   * 1번 룰셋 : 외부에서 접근하는 모든 시스템에게 192.168.100.100의 80번 포트에 대한 접근을 허용함.
   * 2번 룰셋 : 명백히 허용하지 않은 서비스에 대한 거부로 룰셋에 명시적으로 혀용되지 않은 것은 모두 차단함.
@@ -146,7 +146,9 @@ IDS는 네트워크에서 백신과 유사한 역할을 한다. 네트워크를 
 
 ### 침입 탐지 시스템의 설치 위치
 
-![Screenshot from 2020-09-22 14-45-55](/home/student/Pictures/Screenshot from 2020-09-22 14-45-55.png)
+
+![Screenshot from 2020-09-22 14-45-55](https://user-images.githubusercontent.com/69098825/93896767-4b2f4980-fd2c-11ea-9014-c874a7380bfc.png)
+
 
 1. 패킷이 라우터로 들어오기 전
    * 네트워크에 실행되는 모든 공격 탐지.
@@ -221,7 +223,8 @@ IDS는 네트워크에서 백신과 유사한 역할을 한다. 네트워크를 
 
 * NAC를 통한 사용자 인증
 
-  ![Screenshot from 2020-09-22 15-27-08](/home/student/Pictures/Screenshot from 2020-09-22 15-27-08.png)
+  ![Screenshot from 2020-09-22 15-27-08](https://user-images.githubusercontent.com/69098825/93896832-5edab000-fd2c-11ea-9517-97ad4644cbda.png)
+
 
   1. 네트워크 접근 요청
   2. 사용자 및 PC 인증 : NAC에 등록되어 있는 MAC 주소나 SSO와 연계하여 인증을 수행한다. 인증 과정에서 백신이나 보안 패치의 적절성 여부를 검토한다.
@@ -300,7 +303,8 @@ IDS는 네트워크에서 백신과 유사한 역할을 한다. 네트워크를 
 
 * 사내 운영체제의 커널에 DRM 모듈을 삽입하여 문서를 작성하고 저장할 때 이를 암호화 하여 기록한다. 저장된 파일을 읽을 때 문서를 읽고자 하는 이가 암호화된 문서를 읽을 자격이 있는지를 확인한 후 복호화하여 프로그램에 전달하여 읽기 권한을 부여받을 수 있다.
 
-  ![Screenshot from 2020-09-22 15-48-46](/home/student/Pictures/Screenshot from 2020-09-22 15-48-46.png)
+  ![Screenshot from 2020-09-22 15-48-46](https://user-images.githubusercontent.com/69098825/93896631-1a4f1480-fd2c-11ea-8d32-988ba51e4d4f.png)
+
 
 * DRM 인증은 인증서를 이용하는 경우가 많다.
 
