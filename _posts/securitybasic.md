@@ -1,3 +1,11 @@
+---
+layout: post
+title: "보안 기초 개념"
+author: "한결"
+categories: blog
+---
+
+
 ### 인증시스템
 
 인증을 하고자 하는 주제Subject 에 대해 식별Identification 하고, 이에 대한 인증Authentication 서비스를 제공하는 시스템이다.
